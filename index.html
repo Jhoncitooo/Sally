@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="desert">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Invitación Especial a Ver CARS! 🏁 08 de Octubre</title>
+  <meta name="description" content="¡Estás invitado a ver la primera película de Cars este 08 de octubre! Vive la experiencia Piston Cup con snacks, trivia y mucha velocidad. ¡Cuchao!" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Racing+Sans+One&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>🏁 ¡GRAN FUNCIÓN EXCLUSIVA! 🏎️ CARS (2006) DE DISNEY PIXAR ⚡ 08 DE OCTUBRE 🎬 ¡CUCHAO! 🏁 DE VUELTA A LA PISTA 🍿 SNACKS INCLUIDOS ⚡</span>
+      <span>🏁 ¡GRAN FUNCIÓN EXCLUSIVA! 🏎️ CARS (2006) DE DISNEY PIXAR ⚡ 08 DE OCTUBRE 🎬 ¡CUCHAO! 🏁 DE VUELTA A LA PISTA 🍿 SNACKS INCLUIDOS ⚡</span>
+    </div>
+  </div>
+
+  <!-- Ambient Audio Synthesizer Controls & Neon Switch -->
+  <header class="navbar container">
+    <div class="logo-box">
+      <span class="logo-lightning">⚡ 95</span>
+      <span class="logo-text">PISTON CUP MOVIES</span>
+    </div>
+    <div class="header-actions">
+      <button id="sound-toggle" class="btn-icon" title="Efectos de Sonido">
+        <span id="sound-icon">🔊</span> Motor SFX
+      </button>
+      <button id="theme-toggle" class="btn-theme" title="Cambiar a Modo Neón">
+        <span class="theme-icon">💡</span> Noche Neón Radiator Springs
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero container">
+    <div class="hero-badge">
+      <span class="flag-icon">🏁</span> INVITACIÓN ESPECIAL DE CINE
+    </div>
+    <h1 class="hero-title">
+      ¡PREPÁRATE PARA LA PISTA! <br>
+      <span class="text-highlight">CARS 1ª PELÍCULA</span>
+    </h1>
+    <p class="hero-subtitle">
+      "Volvemos a la pista y a la magia del 2006. Ven a revivir la aventura de Rayo McQueen, Mate, Doc Hudson y Radiator Springs."
+    </p>
+
+    <div class="hero-meta-grid">
+      <div class="meta-card">
+        <div class="meta-icon">📅</div>
+        <div class="meta-info">
+          <span class="meta-label">FECHA</span>
+          <span class="meta-value">Miércoles 08 de Octubre</span>
+        </div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-icon">⏰</div>
+        <div class="meta-info">
+          <span class="meta-label">HORA PREDETERMINADA</span>
+          <span class="meta-value">07:00 PM (Ajustable)</span>
+        </div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-icon">📍</div>
+        <div class="meta-info">
+          <span class="meta-label">UBICACIÓN</span>
+          <span class="meta-value">Sala VIP / En Casa 🍿</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speedometer Countdown Section -->
+  <section class="countdown-section container">
+    <div class="section-header">
+      <h2 class="section-title">⏱️ CUENTA REGRESIVA DE LA PISTA</h2>
+      <p class="section-desc">El cronómetro está corriendo para el gran banderazo de salida el 08 de octubre.</p>
+    </div>
+
+    <div class="speedometer-container">
+      <div class="gauge-grid">
+        <div class="gauge-card">
+          <div class="gauge-val" id="days">00</div>
+          <div class="gauge-label">DÍAS</div>
+        </div>
+        <div class="gauge-card">
+          <div class="gauge-val" id="hours">00</div>
+          <div class="gauge-label">HORAS</div>
+        </div>
+        <div class="gauge-card">
+          <div class="gauge-val" id="minutes">00</div>
+          <div class="gauge-label">MINUTOS</div>
+        </div>
+        <div class="gauge-card">
+          <div class="gauge-val" id="seconds">00</div>
+          <div class="gauge-label">SEGUNDOS</div>
+        </div>
+      </div>
+      <div class="speedometer-needle-wrapper">
+        <div class="needle" id="speed-needle"></div>
+        <span class="speed-text">VELOCIDAD: <strong>95 MPH</strong> ¡CUCHAO!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive VIP Ticket Generator -->
+  <section class="ticket-section container">
+    <div class="section-header">
+      <h2 class="section-title">🎫 TU PASE DE ABORDAJE VIP (PISTON CUP PASS)</h2>
+      <p class="section-desc">Personaliza tu pase oficial de cine escribiendo tu nombre a continuación.</p>
+    </div>
+
+    <div class="ticket-builder">
+      <div class="ticket-input-group">
+        <label for="guest-name-input">Nombre del Piloto / Invitado:</label>
+        <div class="input-wrapper">
+          <input type="text" id="guest-name-input" placeholder="Ej: McQueen, Mate, o Tu Nombre" maxlength="25" />
+          <button id="stamp-btn" class="btn-accent">🎟️ Estampar Boleto</button>
+        </div>
+      </div>
+
+      <!-- Ticket Canvas Card -->
+      <div class="ticket-card" id="ticket-card">
+        <div class="ticket-left">
+          <div class="ticket-badge">PASE VIP #95</div>
+          <h3 class="ticket-movie">CARS - PIXAR</h3>
+          <div class="ticket-passenger">
+            <span class="label">PILOTO INVITADO:</span>
+            <span class="passenger-name" id="ticket-name-display">TU NOMBRE AQUÍ</span>
+          </div>
+          <div class="ticket-details-row">
+            <div>
+              <span class="label">FECHA:</span>
+              <strong>08 OCTUBRE</strong>
+            </div>
+            <div>
+              <span class="label">SECTOR:</span>
+              <strong>PIT LANE #95</strong>
+            </div>
+            <div>
+              <span class="label">ASIENTO:</span>
+              <strong>FILA A - 01</strong>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-right">
+          <div class="ticket-stub">
+            <div class="piston-logo">🏆</div>
+            <div class="stub-code">CAR-0810-95</div>
+            <div class="barcode">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pits Snack Selector Section -->
+  <section class="snacks-section container">
+    <div class="section-header">
+      <h2 class="section-title">🍿 MENÚ DE PITS & SNACKS</h2>
+      <p class="section-desc">Elige qué botanas te gustaría tener durante la función de Cars.</p>
+    </div>
+
+    <div class="snacks-grid">
+      <div class="snack-card" data-id="popcorn">
+        <div class="snack-icon">🍿</div>
+        <h3 class="snack-title">Palomitas Radiator Springs</h3>
+        <p class="snack-desc">Mantequilla extra al estilo Dinoco.</p>
+        <div class="snack-controls">
+          <button class="btn-qty decrease">-</button>
+          <span class="snack-qty" id="qty-popcorn">0</span>
+          <button class="btn-qty increase">+</button>
+        </div>
+      </div>
+
+      <div class="snack-card" data-id="soda">
+        <div class="snack-icon">🥤</div>
+        <h3 class="snack-title">Gasolina Extra (Refresco/Jugo)</h3>
+        <p class="snack-desc">Sabor cola o cítrico bien helado.</p>
+        <div class="snack-controls">
+          <button class="btn-qty decrease">-</button>
+          <span class="snack-qty" id="qty-soda">0</span>
+          <button class="btn-qty increase">+</button>
+        </div>
+      </div>
+
+      <div class="snack-card" data-id="pizza">
+        <div class="snack-icon">🍕</div>
+        <h3 class="snack-title">Pizza Luigi & Guido</h3>
+        <p class="snack-desc">Cortesía de la Casa de los Neumáticos.</p>
+        <div class="snack-controls">
+          <button class="btn-qty decrease">-</button>
+          <span class="snack-qty" id="qty-pizza">0</span>
+          <button class="btn-qty increase">+</button>
+        </div>
+      </div>
+
+      <div class="snack-card" data-id="candy">
+        <div class="snack-icon">🍬</div>
+        <h3 class="snack-title">Dulces de la Ruta 66</h3>
+        <p class="snack-desc">Gominolas, chocolates y chicles.</p>
+        <div class="snack-controls">
+          <button class="btn-qty decrease">-</button>
+          <span class="snack-qty" id="qty-candy">0</span>
+          <button class="btn-qty increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="snack-summary-box" id="snack-summary">
+      <h4>🛒 Tu Pedido de Pits:</h4>
+      <p id="snack-list-text">Aún no has seleccionado snacks (se valen todos 😉).</p>
+    </div>
+  </section>
+
+  <!-- Interactive Trivia Section -->
+  <section class="trivia-section container">
+    <div class="section-header">
+      <h2 class="section-title">🧠 TRIVIA DIDÁCTICA: ¿QUÉ TANTO SABES DE CARS?</h2>
+      <p class="section-desc">Responde 3 preguntas para encender los motores antes del 08 de Octubre.</p>
+    </div>
+
+    <div class="trivia-card">
+      <div class="trivia-progress">
+        <div class="progress-bar" id="trivia-progress-bar"></div>
+      </div>
+      <div id="trivia-quiz-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive RSVP Section -->
+  <section class="rsvp-section container" id="rsvp">
+    <div class="rsvp-box">
+      <div class="rsvp-badge">CONFIRMACIÓN DE ASISTENCIA</div>
+      <h2 class="rsvp-title">¿ACEPTAS LA INVITACIÓN AL PISTON CUP? 🏁</h2>
+      <p class="rsvp-subtitle">Por favor confirma tu presencia para preparar los mejores lugares y los snacks.</p>
+
+      <div class="rsvp-buttons">
+        <button class="btn-rsvp btn-confirm" id="btn-accept">
+          <span class="btn-icon">⚡</span> ¡CUCHAO! ASISTIRÉ 🏁
+        </button>
+        <button class="btn-rsvp btn-maybe" id="btn-maybe">
+          <span class="btn-icon">🛠️</span> TENGO PREGUNTAS / DUDA
+        </button>
+        <button class="btn-rsvp btn-decline" id="btn-decline">
+          <span class="btn-icon">💔</span> NO PUEDO IR
+        </button>
+      </div>
+
+      <div id="rsvp-status-message" class="rsvp-status hidden"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">⚡ CARS - 08 DE OCTUBRE</div>
+      <p>Creado con cariño y mucha velocidad para una gran tarde de película. ¡Cuchao!</p>
+      <small>© 2026 Pixar Animation Studios Fan Experience.</small>
+    </div>
+  </footer>
+
+  <!-- Sound Audio Engine & Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
